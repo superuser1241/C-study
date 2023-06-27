@@ -18,6 +18,11 @@ namespace App007
             uint c = uint.MaxValue;   // max값 : 4294967295
             int d = int.MinValue;
             Console.WriteLine($"c = {c}, d = {d}");
+
+            float e = 3.141592F;
+            double f = 3.141592;
+            Console.WriteLine($"e = {e}, f = {f}");
+
         }
     }
 }
