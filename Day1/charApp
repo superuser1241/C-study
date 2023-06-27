@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace charApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char a = '안';
+            char b = '녕';
+            string str = "안녕";
+
+            Console.WriteLine($"a = {a}, b = {b}");
+            Console.WriteLine($"{a}{b}");
+            Console.WriteLine(str);
+
+            Console.WriteLine();
+
+            string multi01 = "안녕\n하세요";
+            Console.WriteLine(multi01);
+
+            // Q2. 다음과 같이 표현하라
+            // char를 사용하여 '반' '가' '워' 출력
+            // string
+            // "행복
+            // 하세
+            // 요!!"
+
+            char Hello = '반';
+            char Hello1 = '가';
+            char Hello2 = '워';
+
+            Console.WriteLine($"'{Hello}''{Hello1}''{Hello2}'");
+
+            char[] greet = new char[3];
+            greet[0] = '반';
+            greet[1] = '가';
+            greet[2] = '워';
+            
+            for(int i = 0; i<greet.Length; i++)
+            {
+                Console.Write(greet[i]);
+            }
+
+            Console.WriteLine();
+
+            string Hello3 = "행복\n하세\n요!!";
+            Console.WriteLine(Hello3 );
+
+        }
+    }
+}
