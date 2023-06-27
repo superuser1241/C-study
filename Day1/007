@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace App007
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            byte a = 255;
+            sbyte b = (sbyte)a;
+
+            Console.WriteLine(b);
+
+            uint c = uint.MaxValue;   // max값 : 4294967295
+            int d = int.MinValue;
+            Console.WriteLine($"c = {c}, d = {d}");
+        }
+    }
+}
