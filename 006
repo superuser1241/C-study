@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace App006
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // 최적의 몸무게 구하기(Q1)
+            // 수식(키-110)
+            int h;
+            h = Int32.Parse(Console.ReadLine());
+            int result = h - 110;
+            Console.WriteLine(result);
+        }
+    }
+}
