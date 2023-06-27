@@ -1,0 +1,6 @@
+            int a;
+            int b;
+            a = 500;
+            b = 200;
+            int result = a - b;
+            Console.WriteLine(result);
