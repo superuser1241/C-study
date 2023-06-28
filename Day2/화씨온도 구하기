@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace 화씨온도_구하기
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int c;
+            double f;
+
+            c=int.Parse(Console.ReadLine());
+
+            f = 9.0 / 5.0 * c + 32;
+            Console.WriteLine(f);
+        }
+    }
+}
