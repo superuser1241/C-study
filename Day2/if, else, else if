@@ -4,23 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace if__else__else_if
+namespace Q3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            // 홀짝
-            int number;
-            number = Int32.Parse(Console.ReadLine());
+            // 정수 -7을 입력받아서 음수, 홀수가 출력되도록 코딩
 
-            if(number %2== 1)
+            int a;
+            a= Int32.Parse(Console.ReadLine());
+
+            if(a %2==1)
             {
-                Console.WriteLine("홀수입니다");
+                Console.WriteLine("짝수");
             }
             else
             {
-                Console.WriteLine("짝수입니다");
+                Console.WriteLine("홀수");
+            }
+
+            if (a < 0)
+            {
+                Console.WriteLine("음수");
+            }
+            else
+            {
+                Console.WriteLine("양수");
             }
         }
     }
