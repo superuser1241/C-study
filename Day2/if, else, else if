@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace if__else__else_if
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // 홀짝
+            int number;
+            number = Int32.Parse(Console.ReadLine());
+
+            if(number %2== 1)
+            {
+                Console.WriteLine("홀수입니다");
+            }
+            else
+            {
+                Console.WriteLine("짝수입니다");
+            }
+        }
+    }
+}
