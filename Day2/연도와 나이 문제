@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace 연도와_나이
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int age;
+            age = int.Parse(Console.ReadLine());
+            age = 2023 - age - 1;
+            Console.WriteLine($"({age + 1})");
+            Console.WriteLine($"(만{age}세)");
+        }
+    }
+}
