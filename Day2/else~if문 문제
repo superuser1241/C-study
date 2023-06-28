@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace 관계연산자
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+
+            if (number > 100 || number < 0)
+
+                Console.WriteLine("지정 값 초과");
+
+            else if (number >= 90)
+
+                Console.WriteLine("A");
+
+            else if (number >= 80)
+
+                Console.WriteLine("B");
+
+            else if (number >= 70)
+
+                Console.WriteLine("C");
+
+            else if (number >= 60)
+
+                Console.WriteLine("D");
+
+            else
+
+                Console.WriteLine("F");
+        }
+    }
+}
