@@ -39,6 +39,22 @@ namespace Stringsearch
 
             //Replace()
             Console.WriteLine($"Replace Evening : {greeting.Replace("Morning", "Evening")}");
+
+            //ToLower
+            Console.WriteLine($"{"ABC".ToLower()}");
+
+            //ToUpper
+            Console.WriteLine($"{"abc".ToUpper()}");
+
+            //Insert
+            Console.WriteLine("Happy Friday!".Insert(5, "Sunny"));
+
+            //Remove
+            Console.WriteLine("I Don't Love You".Remove(2,6));
+
+            //Trim
+            Console.WriteLine("      ABC     ");
+            Console.WriteLine("      ABC     ".Trim());
         }
     }
 }
