@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Array2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[100];
+
+            //입력
+            for (int i = 0; i < 100; i++)
+            {
+                arr[i] = i + 1;
+            }
+
+            //출력
+            for(int j = 0; j<arr.Length; j++)
+             {
+                Console.Write(arr[j]+" ");
+             }
+        }
+    }
+}
