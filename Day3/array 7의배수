@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace arr5개
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[10];
+
+            for(int i =9; i>= 0; i--)
+            {
+                arr[i] = (i+1)*7;
+                Console.WriteLine(arr[i]);
+            }
+        }
+    }
+}
