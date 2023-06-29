@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using static System.Console;
+
+namespace Stringsearch
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            String greeting = "Good Morning";
+
+            Console.WriteLine(greeting);
+            Console.WriteLine();
+
+            // IndexOf
+            Console.WriteLine($"{greeting.IndexOf("Morning")}");
+            Console.WriteLine($"{greeting.IndexOf("d")}");
+
+            //LastIndexOf
+            Console.WriteLine($"{greeting.LastIndexOf("Good")}");
+            Console.WriteLine($"{greeting.LastIndexOf("o")}");
+
+            //StartWith()
+            Console.WriteLine($"StartWith : {greeting.StartsWith("Good")}");
+            Console.WriteLine($"StartWith : {greeting.StartsWith("Morning")}");
+
+            //EndWith
+            Console.WriteLine($"EndWith : {greeting.EndsWith("Good")}");
+            Console.WriteLine($"EndWith : {greeting.EndsWith("Morning")}");
+
+            //Contains()
+            Console.WriteLine($"Contains Evening : {greeting.Contains("Evening")}");
+            Console.WriteLine($"Contains Evening : {greeting.Contains("Morning")}");
+
+            //Replace()
+            Console.WriteLine($"Replace Evening : {greeting.Replace("Morning", "Evening")}");
+        }
+    }
+}
