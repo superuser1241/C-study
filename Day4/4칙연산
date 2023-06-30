@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace 매개변수
+{
+    internal class Program
+    {
+        static int plus(int a, int b)
+        {
+            return a + b;
+        }
+        static int minus(int a, int b)
+        {
+            return a - b;
+        }
+        static double multiple(double a, double b)
+        {
+            return a *b;
+        }
+        static double divide(double a, double b)
+        {
+            return a / b;
+        }
+        static void Main(string[] args)
+        {  
+            int num1 =Int32.Parse(Console.ReadLine());
+            int num2= Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine(plus(num1,num2));
+            Console.WriteLine();
+            Console.WriteLine(minus(num1,num2));
+            Console.WriteLine();
+            Console.WriteLine(multiple(num1,num2));
+            Console.WriteLine();
+            Console.WriteLine(divide(num1,num2));
+        }
+    }
+}
