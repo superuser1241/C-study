@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace 대문자_Z부터_A까지_출력
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] arr = new char[26];
+
+            char ch = 'Z';
+            for (int i = 0; i<arr.Length; i++)
+            {
+                arr[i] = ch--;
+            }
+            for(int j=0; j<arr.Length; j++)
+            {
+                Console.Write(arr[j]+ " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            char ch1 = 'a';
+            for(int i=0; i < arr.Length; i++)
+            {
+                arr[i] = ch1++;
+            }
+            for(int j = 0; j < arr.Length; j++)
+            {
+                Console.Write(arr[j]+" ");
+            }
+        }
+    }
+}
