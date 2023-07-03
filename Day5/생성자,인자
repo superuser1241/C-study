@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace 생성자
+{
+    class Cat
+    {
+        //멤버변수
+        public string Name;
+        public string Color;
+
+        //default 생성자
+        public Cat()
+        {
+            Name = "";
+            Color = "";
+        }
+        //인자가 있는 생성자
+        public Cat(string _Name, string _Color)
+        {
+            Name = _Name;
+            Color = _Color;
+        }
+        public void Meow()
+        {
+            Console.WriteLine($"{Name}:야옹");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat Kitty = new Cat("키티", "하얀색");
+            Console.WriteLine(Kitty.Name+Kitty.Color);
+
+            Cat nero = new Cat("네로", "검은색");
+            Console.WriteLine(nero.Name+nero.Color);
+        }
+    }
+}
