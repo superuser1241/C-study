@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sdfs
+{
+    class Cat
+    {
+        private string name;
+        private int age;
+        private string color;
+
+        public void setname(string name)
+        {
+            this.name = name;
+        }
+        public string getName()
+        {
+            return name;
+        }
+        public void setage(int age)
+        {
+            this.age = age;
+        }
+        public int getage()
+        {
+            return age;
+        }
+        public void setcolor(string color)
+        {
+            this.color = color;
+        }
+        public string getColor()
+        {
+            return color;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat nero = new Cat();
+            nero.setname("네로");
+            nero.setage(10);
+            nero.setcolor("검은색");
+            Console.WriteLine(nero.getName()+"\n"+nero.getage()+"\n"+nero.getColor());
+        }
+    }
+}
