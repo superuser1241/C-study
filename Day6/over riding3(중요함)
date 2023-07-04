@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Q2626
+{
+    //도형(부모) 클래스를 만든다
+    //삼각형(자식) 클래스를 만들어 주세요. 상속을 하세요.
+    //사각형(자식)
+    //원(자식)
+    //공통 메소드 draw()를 구현하고 각 클래스에서 오버라이딩 해주세요.
+    class transport
+    {
+        public virtual void trans()
+        {
+            Console.WriteLine("대중교통");
+        }
+    }
+    class bus : transport
+    {
+        public override void trans()
+        {
+            Console.WriteLine("버스");
+        }
+    }
+    class subway : transport
+    {
+        public override void trans()
+        {
+            Console.WriteLine("지하철");
+        }
+    }
+    class airplane : transport
+    {
+        public override void trans()
+        {
+            Console.WriteLine("비행기");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            transport[] tp = new transport[4];
+
+            tp[0] = new transport();
+            tp[1] = new bus();
+            tp[2] = new subway();
+            tp[3] = new airplane();
+
+            for (int i =0; i < tp.Length; i++)
+            {
+                tp[i].trans();
+            }
+        }
+    }
+}
