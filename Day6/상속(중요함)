@@ -4,33 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPapp005
+namespace OPPapp066
 {
-    //상속
     class Car
     {
-        public string name;
-        protected int speed;
-        private string brand;
-        public void Run()
+        public virtual void Run()
         {
             Console.WriteLine("차가 달리다");
         }
     }
     class SuperCar : Car
     {
-        public SuperCar()
+        public override void Run()
         {
-            this.speed = 100;
+            Console.WriteLine("슈퍼카가 달리다");
         }
     }
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            SuperCar sc= new SuperCar();
-            sc.Run();
-            sc.name = "자동차";
+            Car car = new Car();
+            car.Run();
+            SuperCar superCar = new SuperCar();
+            superCar.Run();
         }
     }
 }
