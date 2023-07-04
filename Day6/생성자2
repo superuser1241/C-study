@@ -8,14 +8,10 @@ namespace CatApp01
 {
     class Dog
     {
-        private string name;
-        public Dog(string _name)
+        public string Name{get; set;}
+        public Dog(string name)
         {
-            name = _name;
-        }
-        public string getName()
-        {
-            return name;
+            Name = name;
         }
         public string Eat()
         {
@@ -31,8 +27,8 @@ namespace CatApp01
         static void Main(string[] args)
         {
             Dog tom = new Dog("톰");
-            Console.WriteLine($"{tom.getName()}이 음식을 {tom.Eat()}");
-            Console.WriteLine($"{tom.getName()}이 {tom.Play()}");
+            Console.WriteLine($"{tom.Name()}이 음식을 {tom.Eat()}");
+            Console.WriteLine($"{tom.Name()}이 {tom.Play()}");
 
         }
     }
