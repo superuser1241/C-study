@@ -1,0 +1,28 @@
+using System;
+
+namespace OOPAPP0808
+{
+    abstract class Shape
+    {
+        public abstract void Draw();   //추상 메소드는 구현하지 않는다
+    }
+    class Triangle : Shape
+    {
+        public override void Draw()
+        {
+            Console.WriteLine("삼각형을 그린다");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //실세계
+            Shape shapes = new Triangle();
+            shapes.Draw();
+
+            Shape s = new Triangle();
+            s.Draw();
+        }
+    }
+}
