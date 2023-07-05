@@ -11,6 +11,7 @@ namespace Q2626
     //사각형(자식)
     //원(자식)
     //공통 메소드 draw()를 구현하고 각 클래스에서 오버라이딩 해주세요.
+    //abstract로 최상위 클래스에 지정하면 이건 사용 할 수 없다.
     class transport
     {
         public virtual void trans()
