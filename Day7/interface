@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _123456789
+{
+    interface Wing
+    {
+        void Fly();                //닷넷 프레임워크에서는 interface 안에 public 사용불가
+    }
+    class Horse
+    {
+
+    }
+    class Angel : Wing
+    {
+        public void Fly()
+        {
+            Console.WriteLine("천사가 납니다.");
+        }
+    }
+    class Unicon : Horse, Wing               //C#은 다중상속이 불가능하지만 interface를 사용(중요)
+    {
+        public void Fly()
+        {
+            Console.WriteLine("유니콘이 납니다.");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Angel angel = new Angel();
+            angel.Fly();
+            Unicon unicon = new Unicon();
+            unicon.Fly();
+        }
+    }
+}
