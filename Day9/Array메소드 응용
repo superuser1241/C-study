@@ -1,0 +1,36 @@
+using System;
+
+namespace ConsoleApp11
+{
+    internal class Program
+    {
+        private static void Print(int value)
+        {
+            Console.WriteLine($"{value}");
+        }
+        static void Main(string[] args)
+        {
+            Random r = new Random();
+
+            int[] arr = new int[80];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = r.Next(1, 100);
+                Console.WriteLine(arr[i]);
+            }
+            Console.WriteLine($"80의 위치:" + Array.IndexOf(arr, 80));
+
+            Console.WriteLine();
+
+            Array.Sort(arr);
+            Array.ForEach<int>(arr,new Action<int>(Print));
+
+            if (Array.IndexOf(arr, 80) < 0)
+            {
+                Console.WriteLine("값이 없습니다");
+            }
+        }
+    }
+}
+
