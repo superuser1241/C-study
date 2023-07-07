@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp14
+{
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+            //Queue :앞이 열려있고 뒤는 뚫려있는 구조     123-> 123
+            Queue<string> que =new Queue<string>();
+            que.Enqueue("Hello");
+            que.Enqueue("Halo");
+            que.Enqueue("Hi");
+
+            while (que.Count > 0)
+                Console.WriteLine(que.Dequeue());
+
+            Stack<int> stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+
+            Console.WriteLine();
+            while (stack.Count > 0)
+                Console.WriteLine(stack.Pop());
+        }
+    }
+}
