@@ -1,0 +1,118 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DBApp02
+{
+    class Student
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Pnumber { get; set; }
+
+        public Student(int id, string name, string pnumber)
+        {
+            ID = id;
+            Name = name;
+            Pnumber = pnumber;
+        }
+    }
+    internal class Program
+    {
+        static int N = 0;
+        static List<Student> students = new List<Student>();
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                UIinit();
+                switch (N)
+                {
+                    case 1:
+                        //삽입 기능을 완성하세요.
+                        Console.WriteLine("ID를 입력해주세요:");
+                        int id1 = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("이름을 입력해주세요:");
+                        string name1 = Console.ReadLine();
+
+                        Console.WriteLine("전화번호를 입력해주세요:");
+                        string pnumber1 = Console.ReadLine();
+
+                        students.Add(new Student(id1, name1, pnumber1));
+                        Console.WriteLine("학생 정보가 저장되었습니다.");
+                        break;
+                    case 2:
+                        //삭제 기능을 완성하세요.
+                        Console.WriteLine("삭제할 ID를 입력해주세요:");
+                        int id2 = int.Parse(Console.ReadLine());
+                        foreach(Student st in students)
+                        {
+                            if(st.ID == id2)
+                            {
+                                students.Remove(st);   
+                                break;
+                            }
+                        }
+                        break;
+                    case 3:
+                        //조회 기능을 완성하세요.
+                        Console.WriteLine("\n학생 목록:\n");
+                        foreach (Student st in students)
+                        {
+                            Console.WriteLine($"ID: {st.ID}, 이름: {st.Name}, 전화번호: {st.Pnumber}");
+                        }
+                        Console.WriteLine();
+                        break;
+                    case 4:
+                        //수정 기능을 완성하세요.
+                        Console.Write("ID를 입력해 주세요 : ");
+                        int id3 = int.Parse(Console.ReadLine());
+                        foreach (Student st in students)
+                        {
+                            if (st.ID == id3)
+                            {
+                                Console.Write("수정할 ID를 입력해주세요 : ");
+                                int corid = int.Parse(Console.ReadLine());
+                                Console.Write("수정할 Name을 입력해주세요 : ");
+                                string name  = Console.ReadLine();
+                                Console.Write("수정할 Pnumber을 입력해주세요 : ");
+                                string Phonenum = Console.ReadLine();
+                                st.ID = corid;
+                                st.Name = name;
+                                st.Pnumber = Phonenum;
+                            }
+                        }
+
+                        //수정 기능을 완성하세요.
+                        break;
+                    case 5:
+                        Console.WriteLine("\n프로그램을 종료합니다.\n");
+                        Console.WriteLine("안녕히 계세요. 수고하셨습니다.\n");
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("\n잘못된 메뉴를 입력하셨습니다. \n\n다시 입력 해 주세요.\n");
+                        break;
+                }
+            }
+
+        }
+        static void UIinit()
+        {
+            Console.WriteLine("1. 데이터 삽입");
+            Console.WriteLine("2. 데이터 삭제");
+            Console.WriteLine("3. 데이터 조회");
+            Console.WriteLine("4. 데이터 수정");
+            Console.WriteLine("5. 프로그램 종료");
+
+            Console.Write("메뉴 : ");
+            N = Int32.Parse(Console.ReadLine());
+        }
+    }
+}
+
+
