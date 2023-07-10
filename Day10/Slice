@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Slice
+{
+    internal class Program
+    {
+        static void PrintArray(System.Array array)              //static void PrintArray(char[] array)이것도 사용가능
+        {
+            foreach(var e in array)
+            {
+                Console.Write(e);
+                Console.WriteLine();
+            }
+        }
+        static void Main(string[] args)
+        {
+            //배열선언
+            char[] array = new char['Z' - 'A' + 1];      //정규표현식  Z(90) - A(65) + 1
+            //배열초기화
+            for (int i = 0; i < array.Length; i++)
+                array[i] = (char)('A' + i);
+
+            PrintArray(array);
+        }
+    }
+}
