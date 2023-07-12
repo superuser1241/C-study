@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp30
+{
+    internal class Program
+    {
+        static public int CharCounter(char[] arr, char ch)
+        {
+            int cnt = 0;
+            for(int i=0; i<arr.Length; i++)
+            {
+                if (arr[i] == ch)
+                {
+                    cnt++;
+                }
+            }
+            return cnt;
+        }
+        static void Main(string[] args) 
+        {
+            //1. 문자열 입력
+            Console.WriteLine("문자열 입력:");
+            string str = Console.ReadLine();
+            //2.문자 입력
+            Console.WriteLine("문자 입력:");
+            char str2= char.Parse(Console.ReadLine());
+            //char c = str2[0];
+            char[] strchar = str.ToCharArray();
+
+            int result = CharCounter(strchar, str2);
+            Console.WriteLine(result);
+
+            /*char = 'a'
+            string"abcd"
+            char[0] = a;
+            char[1]=b
+            char[2]=c
+            char[3]=d
+            */
+            
+
+        }
+    }
+}
