@@ -1,0 +1,85 @@
+#자신의 주민번호를 넣고 년도, 생일 뽑아냅니다
+SELECT '991011-1234567',
+SUBSTR('991011-1234567',1,2) AS 년도,
+SUBSTR('991011-1234567',3,4) AS 생일
+FROM DUAL;
+
+#LPAD, RPAD 데이터의 빈공간을 채우는 함수
+SELECT 'Oracle',
+LPAD('Oracle',10,'#'),
+RPAD('Oracle',10,'*'),
+LPAD('Oracle',10),
+RPAD('Oracle',10)
+FROM DUAL;
+
+#LAPD RPAD 응용
+#RPAD를 이용하여 주민번호 뒷자리를 *로 표시
+SELECT RPAD('971225-',14,'*'),
+       RPAD('010-1234-',13,'#')
+FROM DUAL;
+
+#문자열 두개를 붙여주세요 ex) '7788' 'SCOTT'
+SELECT CONCAT('7788','SCOTT') FROM DUAL;
+
+SELECT CONCAT(EMPNO, ENAME) FROM EMP;
+
+#문자열 붙이기 가장 많이 사용하는 표현은?
+SELECT '7788' || ':' ||'SCOTT' FROM DUAL;
+
+#TRIM 공백제거
+SELECT TRIM('    HELLO    ') FROM DUAL;
+
+#P146 ROUND 반올림 해주는 함수
+SELECT ROUND(3.141592),
+       ROUND(3.141592,2),
+       ROUND(3.141592,3)
+FROM DUAL;
+
+#TRUNC 버림함수
+SELECT TRUNC(1234.5678),
+       TRUNC(1234.5678,1),
+       TRUNC(1234.5678,2),
+       TRUNC(1234.5678,3)
+FROM DUAL;
+
+#지정한 숫자와 가장 가까운 정수찾는 함수 CEIL, FLOOR
+SELECT CEIL(3.14),FLOOR(3.14),
+       CEIL(-3.14),FLOOR(-3.14)
+FROM DUAL;
+
+#나머지 구하는 연산자 MOD
+SELECT MOD(15,6),
+       MOD(10,2),
+       MOD(11,2)
+FROM DUAL;
+
+#다중행 함수
+SELECT SUM(SAL) FROM EMP;
+SELECT ENAME, SAL FROM EMP;
+SELECT ENAME, SUM(SAL) FROM EMP
+GROUP BY ENAME;
+
+#전체 직원들 보너스(COMM)의 총 합은?
+SELECT SUM(COMM) FROM EMP;
+
+#급여 합계
+SELECT SUM(SAL),SUM(DISTINCT SAL), SUM(ALL SAL) FROM EMP;
+
+#총 직원의 수는?
+SELECT COUNT(*) FROM EMP;
+
+#30번 부서의 직원 수는?
+SELECT COUNT(*) FROM EMP
+WHERE DEPTNO =30;
+
+#월급의 최대와 최소를 구해보자
+SELECT DEPTNO, MAX(SAL), MIN(SAL) FROM EMP
+GROUP BY DEPTNO ORDER BY MAX(SAL) DESC;
+
+
+
+
+
+
+
+
