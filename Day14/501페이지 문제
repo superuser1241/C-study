@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp61
+{
+    delegate void MyDelegate(int a);
+
+    class Market
+    {
+        public event MyDelegate CustomerEvent;
+
+        public void BuySomething(int CustomerNO)
+        {
+            if (CustomerNO == 30)
+                CustomerEvent(CustomerNO);
+        }
+    }
+    internal class Program
+    {
+        static public void MyHandler(int value)
+        {
+            Console.WriteLine($"축하합니다 {value}번째 고객 이벤트에 당첨되셨습니다.");
+        }
+        static void Main(string[] args)
+        {
+            Market market = new Market();
+            market.CustomerEvent += new MyDelegate(MyHandler);
+
+            for(int customerNO=0; customerNO<100; customerNO +=10)
+                market.BuySomething(customerNO);
+        }
+    }
+}
