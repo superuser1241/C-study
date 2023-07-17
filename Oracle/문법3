@@ -214,3 +214,12 @@ DECODE(SUBSTR(MGR,1,2),
                         '55', '5555',
                         '0000') AS CHG_MGRn 
 FROM EMP;
+
+#문제 4번(TO_CHAR)를 쓰면 오류가 난다
+SELECT ENPNO, ENAME, MGR,
+       CASE
+           WHEN IS NULL THEN '0000'
+           WHEN SUBSTR(MGR,1,2)='75' THEN '5555'
+           ELSE TO_CHAR(MGR)
+       END AS CHG_MGR
+FROM EMP;
