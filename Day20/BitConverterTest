@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp70
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("실수를 입력하세요:");
+            double n = double.Parse(Console.ReadLine());
+            Console.WriteLine($"입력받은 숫자는 {n}입니다.");
+            Console.WriteLine();
+
+            byte[] doubleBytes = BitConverter.GetBytes(n);
+            double doubleResult = BitConverter.ToDouble(doubleBytes, 0);
+            Console.WriteLine(BitConverter.ToString(doubleBytes));
+        }
+    }
+}
