@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ConsoleApp82
+{
+    internal class Program
+    {
+        static void Threadfun()
+        {
+            for(int i = 1; i <=100; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        static void Threadfun2()
+        {
+            for(int j='A'; j<='Z'; j++)
+            {
+                Console.WriteLine(j);
+            }
+        }
+        static void Main(string[] args)
+        {
+            Thread t1 = new Thread(new ThreadStart(Threadfun));
+            Thread t2 = new Thread(new ThreadStart(Threadfun2));
+            t1.Name = "Thread1";
+            t2.Name = "Thread2";
+            t1.Start();
+            t2.Start();
+            t1.Join();
+            t2.Join();
+
+        }
+    }
+}
