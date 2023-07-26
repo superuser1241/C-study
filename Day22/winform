@@ -1,0 +1,53 @@
+using Microsoft.Diagnostics.Symbols;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp3
+{
+    public partial class CopyMainForm : Form
+    {
+        private string sourceFile;
+        private string destFile;
+
+        public CopyMainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void btnsrcFile_Click(object sender, EventArgs e)
+        {
+            using(OpenFileDialog ofd = new OpenFileDialog())
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    sourceFile = ofd.FileName;
+                    lblsrcPath.Text = sourceFile;
+                }
+            }
+        }
+
+        private void btndstFile_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog sfd= new SaveFileDialog())
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    destFile = sfd.FileName;
+                    File.Copy(sourceFile, destFile, true);  
+                    // true는 대상 파일이 이미 있을 경우 덮어쓰기를 의미
+                    lbldstPath.Text = "파일 복사 완료: " + destFile;
+                }
+            }
+        }
+    }
+}
