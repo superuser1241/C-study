@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp15
+{
+    public partial class Form1 : Form
+    {
+        void ChangeFont()
+        {
+            if (cboFont.SelectedIndex < 0)
+                return;
+
+            FontStyle style = FontStyle.Regular;
+
+            if (chkBold.Checked)
+                style |= FontStyle.Bold;
+
+            if (chkItalic.Checked)
+                style |= FontStyle.Italic;
+
+            txtSampleText.Font =
+                new Font((string)cboFont.SelectedItem, 10, style);
+        }
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var Fonts = FontFamily.Families;
+            foreach(FontFamily font in Fonts)
+                cboFont.Items.Add(font.Name);
+        }
+
+        private void cboFont_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ChangeFont();
+        }
+
+        private void chkBold_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeFont();
+        }
+
+        private void chkItalic_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeFont();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            pgDummy.Value = tbDummy.Value;
+        }
+    }
+}
