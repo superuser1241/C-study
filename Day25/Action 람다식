@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _526
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 11, 22, 33, 44, 55 };
+
+            foreach(int a in array)
+            {
+                /*Action actio = new Action
+                    (
+                        delegate ()
+                        {
+                            Console.WriteLine (a*a);
+                        }
+                    );
+                actio.Invoke ();*/
+
+                Action<int> action = (x) =>
+                {
+                    int result = x * x;
+                    Console.WriteLine(result);
+                };
+                action(a);
+            }
+        }
+    }
+}
