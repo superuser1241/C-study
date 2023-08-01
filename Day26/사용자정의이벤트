@@ -1,0 +1,33 @@
+using System;
+
+namespace 사용자정의이벤트
+{
+    public delegate void DataReceivedEventHandler(object sender, EventArgs e);
+
+    public class DataReceiver
+    {
+        // DataReceivedEventHandler 타입의 이벤트를 여기에 구현하세요.
+        public event DataReceivedEventHandler DataReceived;
+
+        public void OnDataReceived()
+        {
+            // 이벤트를 트리거 동작을 구현하세요!!!
+            DataReceived.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            DataReceiver receiver = new DataReceiver();
+            // 이곳에 콘솔출력 람다식을 만드세요.
+            // 람다식으로 이벤트 핸들러를 정의하여 이벤트가 발생할 때 콘솔에 출력합니다.
+            receiver.DataReceived += (object sender, EventArgs e) => 
+            Console.WriteLine("Data Received!");
+
+            receiver.OnDataReceived(); 
+            // 이 메서드 호출을 통해 이벤트를 트리거하세요
+        }
+    }
+}
