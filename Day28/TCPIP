@@ -1,0 +1,46 @@
+using Microsoft.SqlServer.Server;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TCPIP
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //1. 인터넷 서버주소 만들기
+            IPAddress localAddr = IPAddress.Parse("127.0.0.1");
+
+            //2. 포트 만들기
+            int port = 13000;
+
+            //3. 서버 객체만들기
+            TcpListener server = new TcpListener(localAddr, port);
+            server.Start();
+            Console.WriteLine("server start");
+
+            using (TcpClient client = server.AcceptTcpClient())    //block I/O
+            {
+                Console.WriteLine("연결성공!");
+
+                //클라이언트에 메세지를 보낸다
+                //4. 소켓에 write할 준비
+                using (NetworkStream stream = client.GetStream())     //write 대상 객체생성
+                {
+                    string reponse = "안녕하세요. 클라이언트님";
+                    byte[] data = Encoding.UTF8.GetBytes(reponse);
+
+                    //5. 데이터 전송(write)
+                    stream.Write(data, 0, data.Length);
+                    Console.WriteLine($"전송한 메세지는: {reponse}");
+                }
+            }
+            server.Stop();
+        }
+    }
+}
