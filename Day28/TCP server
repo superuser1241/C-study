@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Sockets;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleTCPServer
+{
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            IPAddress ipaddr = IPAddress.Parse("127.0.0.1");
+            int port = 13001;
+            TcpListener server = new TcpListener(ipaddr, port);
+            server.Start();
+            Console.WriteLine("서버 연결을 기다리는중......");
+
+            using (TcpClient client = server.AcceptTcpClient())
+            {
+                Console.WriteLine("연결 성공!");
+                using (NetworkStream stream = client.GetStream())
+                {
+                    string send = "ㅎㅇ";
+                    byte[] data = Encoding.UTF8.GetBytes(send);
+
+                    stream.Write(data, 0, data.Length);
+                    Console.WriteLine($"전송한 메시지: {send}");
+                }
+            }
+            server.Stop();
+        }
+    }
+}
