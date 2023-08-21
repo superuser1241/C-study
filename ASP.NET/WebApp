@@ -9,6 +9,11 @@ app.Use(async (context, next) =>
     await context.Response.WriteAsync("Main 페이지 입니다\n");
     await next(context);
 });
+app.Use(async (context, next) =>
+{
+    await context.Response.WriteAsync("안녕하세요.\n");
+    await next(context);
+});
 
 app.Run(async (context) =>
 {
