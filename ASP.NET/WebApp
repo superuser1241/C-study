@@ -3,9 +3,15 @@ var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!");
 
+app.Use(async (context, next) =>
+{
+    context.Response.ContentType = "text/plain; charset=utf-8";   //한글 깨져서 안보이게하는거 보완코드
+    await context.Response.WriteAsync("Main 페이지 입니다\n");
+    await next(context);
+});
+
 app.Run(async (context) =>
 {
-    context.Response.ContentType = "text/plain; charset=utf-8";    //한글 깨져서 안보이게하는거 보완코드
     await context.Response.WriteAsync("ASP.NET Core 공부합시다");
 });
 
